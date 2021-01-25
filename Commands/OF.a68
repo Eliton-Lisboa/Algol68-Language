@@ -1,0 +1,22 @@
+BEGIN
+    # Variables #
+    MODE PERSON = STRUCT(
+        STRING name,
+        INT age,
+        STRING favorite music,
+        STRING email
+    );
+    PERSON person01 := PERSON( "Eliton lisboa", 15, "undefined", "elitonlisboa303@gmail.com" );
+
+    # Program #
+    print( newline );
+    print( name OF person01 );
+    print( newline );
+    print( age OF person01 );
+    print( newline );
+    print( favorite music OF person01 );
+    print( newline );
+    print( email OF person01 );
+    print( newline )
+
+END

@@ -1,0 +1,4 @@
+BEGIN
+    print(( sqrt(12 ** 2), newline));
+    print(( sqrt(12 UP 2), newline))
+END

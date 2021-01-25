@@ -1,0 +1,9 @@
+BEGIN
+    GOTO end;
+
+    print( "between" );
+
+    end:
+
+    print( "end" )
+END

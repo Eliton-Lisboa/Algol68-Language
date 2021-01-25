@@ -1,0 +1,58 @@
+BEGIN
+    REAL option := 0, result := 0.00;
+    STRING msgerror := "";
+    [ 1:2 ] REAL number;
+
+    WHILE TRUE DO
+
+        IF msgerror /= "" THEN
+            print (( msgerror, newline ))
+        ELSE
+            print (( result, newline ))
+        FI;
+
+        print ( newline );
+        print (( "1. Multiplicar", newline ));
+        print (( "2. Dividir", newline ));
+        print (( "3. Adicionar", newline ));
+        print (( "4. Subtrair dois numeros", newline ));
+        print ( newline );
+        print (( "0. Sair", newline ));
+        print ( newline );
+        print ( "Escolha uma opcao: " );
+        read ( option );
+        
+        IF option = 0 THEN
+            stop
+        FI;
+            
+        IF option = 1 OR option = 2 OR option = 3 OR option = 4 THEN
+            print ( "Digite um numero: " );
+            read ( number[1] );
+            
+            IF option /= 4 THEN
+                print ( "Digite mais um numero: " );
+                read ( number[2] )
+            FI;
+            msgerror := ""
+        FI;
+
+        IF option = 1 THEN
+            result := number[1] * number[2]
+            
+        ELIF option = 2 THEN
+            result := number[1] / number[2]
+            
+        ELIF option = 3 THEN
+            result := number[1] + number[2]
+            
+        ELIF option = 4 THEN
+            result := number[1] - 2
+
+        ELSE
+            msgerror := "Erro: opcao invalida!"
+        FI;
+
+        system ( "cls" )
+    OD
+END

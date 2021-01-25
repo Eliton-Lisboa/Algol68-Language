@@ -1,0 +1,11 @@
+BEGIN
+
+    FOR x TO 10 DO
+        print(( "Hello, World!", newline ))
+    OD;
+
+    FOR x FROM 5 TO 10 DO
+        print(( x, newline))
+    OD
+
+END

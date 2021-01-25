@@ -1,0 +1,24 @@
+BEGIN
+    INT number := 0;
+
+    WHILE TRUE DO
+        PROC make factorial = (INT number) REAL:
+        BEGIN
+            CASE number + 1 IN 1, 2, 6, 24, 120, 720
+            OUT
+                number * make factorial(number - 1)
+            ESAC
+        END;
+
+        print(( new line, "Enter a number: " ));
+        read( number );
+
+        IF number = 0 THEN
+            stop
+        FI;
+
+        print(( "    ", make factorial( number ), new line ))
+
+    OD
+
+END

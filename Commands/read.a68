@@ -1,0 +1,7 @@
+BEGIN
+    STRING text := "";
+    print ( "Write a text: " );
+    read( text );
+
+    print( text )
+END

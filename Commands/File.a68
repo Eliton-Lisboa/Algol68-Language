@@ -1,0 +1,11 @@
+BEGIN
+    STRING line;
+    open (standin, "../file_test.303", standin channel);
+
+    DO
+        get ( standin, (line, newline) );
+        print (( line, newline ))
+    OD;
+
+    close ( standin )
+END

@@ -1,0 +1,26 @@
+BEGIN
+    INT  int := 303;
+    REAL real := 303.0;
+    CHAR char := "y";
+    BOOL boolean := FALSE;
+    STRING string := "Hello, World!";
+    COMPL cp := 303;
+    BITS bits := 2r11111;
+    [ 1:2 ] STRING array := ("Hello, ", "World!");
+    MODE MODEL = STRUCT(
+        STRING name,
+        STRING nickname
+    );
+    MODEL model := MODEL( "Eliton", "303" );
+
+    print (( int, newline ));     # +303                                            Guarda números inteiros       #
+    print (( real, newline ));    # +3.03000000000000e  +2                          Guarda números reais          #
+    print (( char, newline ));    # y                                               Guarda apenas um caractere    #
+    print (( boolean, newline )); # F                                               Guarda um boolean             #
+    print (( string, newline ));  # Hello, World!                                   Guarda uma string             #
+    print (( cp, newline ));      # +3.03000000000000e  +2+0.00000000000000e  +0    Guarda um modelo de variável  #
+    print (( bits, newline ));    # FFFFFFFFFFFFFFFFFFFFFFFFFFFTTTTT                Guarda uma sequencia de bits  #
+    print (( array, newline ));   # Hello, World!                                   Guarda uma array              #
+    print (( model, newline ))    # Eliton303                                       Guarda um modelo de variável  #
+
+END

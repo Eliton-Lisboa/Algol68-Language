@@ -1,0 +1,50 @@
+BEGIN
+    MODE PAGE = FLEX[0] STRING;
+    MODE BOOK = FLEX[0] PAGE;
+
+    INT open errno := 0;
+
+    PROC raise open error = (STRING file name) VOID:
+    BEGIN
+        putf(stand error, ($"OpenError: """g""" - "gl$, filename, str error(open errno)));
+        stop
+    END
+
+    PROC read all lines = (STRING in file name) PAGE:
+    BEGIN
+        MODE UPLINKSTRING = STRUCT(REF UPLINKSTRING up, STRING string);
+        FILE in file;
+        open errno := open(in file, in file name, stand in channel);
+        IF open errno NE 0 THEN
+            raise open error(in file name)
+        FI;
+        on logical file end(in file, (REF FILE skip) BOOL: GOTO done);
+        INT upb := 0;
+        UPLINKSTRING first;
+        REF UPLINKSTRING this := first;
+        DO
+            get(in file, string OF this);
+            upb +:= 1;
+            newline(in file);
+            up OF this := LOC UPLINKSTRING;
+            this := up OF this
+        OD;
+        done: (
+            close(in file);
+            [upb]STRING out;
+            this := first;
+            FOR i TO upb DO
+                out[i] := string OF this;
+                this := up OF this
+            OD;
+            out
+        )
+    END;
+
+    FOR i FROM 2 TO a68g argc DO
+        print((i," - ", a68g argv(i), newline));
+        PAGE all lines = read all lines(a68g argv(i));
+        # use 'n(UPB all lines)' in case there are zero lines in a page #
+        printf(( $n(UPB all lines)(gl)$, all lines ))
+    OD
+END

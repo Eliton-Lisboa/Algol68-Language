@@ -1,0 +1,213 @@
+{
+	"scopeName": "source.algol68",
+	"name": "Algol 68",
+	"fileTypes": [
+		"a68",
+		"alg"
+	],
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#separators"
+		},
+		{
+			"include": "#groups"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#identifiers"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"contentName": "comment.block.algol68",
+					"begin": "#",
+					"beginCaptures": {
+						"0": {
+							"name": "keyword.control.algol68"
+						}
+					},
+					"end": "#"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.false.algol68",
+					"match": "\\bFALSE\\b"
+				},
+				{
+					"name": "constant.language.true.algol68",
+					"match": "\\bTRUE\\b"
+				},
+				{
+					"name": "storage.type.bool.algol68",
+					"match": "\\bBOOL\\b"
+				},
+				{
+					"name": "storage.type.int.algol68",
+					"match": "\\binteger\\b"
+				},
+				{
+					"name": "storage.type.int.algol68",
+					"match": "\\bINT\\b"
+				},
+				{
+					"name": "storage.type.re.algol68",
+					"match": "\\bREAL\\b"
+				},
+				{
+					"name": "storage.type.ch.algol68",
+					"match": "\\bCHAR\\b"
+				},
+				{
+					"name": "storage.type.str.algol68",
+					"match": "\\bSTRING\\b"
+				},
+				{
+					"name": "storage.type.mode.algol68",
+					"match": "\\bMODE\\b"
+				},
+				{
+					"name": "storage.type.stru.algol68",
+					"match": "\\bSTRUCT\\b"
+				},
+				{
+					"name": "storage.type.cemp.algol68",
+					"match": "\\bCOMPL\\b"
+				},
+				{
+					"name": "storage.type.bits.algol68",
+					"match": "\\bBITS\\b"
+				},
+				{
+					"name": "storage.type.lbl.algol68",
+					"match": "\\blabel\\b"
+				},
+				{
+					"name": "variable.language.function.algol68",
+					"match": "\\b(new line|newline|sqrt|stop|include)\\b"
+				}
+			]
+		},
+		"groups": {
+			"patterns": [
+				{
+					"name": "meta.brace.round.algol68",
+					"match": "\\(|\\)"
+				},
+				{
+					"name": "meta.brace.square.algol68",
+					"match": "\\[|\\]"
+				}
+			]
+		},
+		"identifiers": {
+			"patterns": [
+				{
+					"name": "variable.other.identifier.algol68",
+					"match": "\\b[A-Za-z][0-9A-Za-z]*\\b"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.algol68",
+					"match": "\\b(BEGIN|OD|DO|ELSE|ELIF|END|FOR|PROC|FROM|IF|FI|OR|THEN|TO|WHILE|AND|GO TO|GOTO|CASE|ESAC|IN|OUT|PR)\\b"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.decimal.algol68",
+					"match": "\\b(\\+|−|-)?([0-9]+(\\.[0-9]+)?((⏨|e)(\\+|−|-)?[0-9]+)?|\\.[0-9]+((⏨|e)(\\+|−|-)?[0-9]+)?|⏨(\\+|−|-)?[0-9]+)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.relational.algol68",
+					"match": "=|≠|<>|<|≥|>=|>|≤|<="
+				},
+				{
+					"name": "keyword.operator.logical.algol68",
+					"match": "≡|<=>|⊃|=>|∨|\\\\/|∧|/\\\\|¬|~"
+				},
+				{
+					"name": "keyword.operator.assignment.algol68",
+					"match": ":="
+				},
+				{
+					"name": "keyword.operator.arithmetic.algol68",
+					"match": "\\+|−|-|×|\\*|UP|/|÷|//|↑|\\*\\*"
+				},
+				{
+					"name": "keyword.operator.arithmetic.algol68",
+					"match": "printf|print|read|system|VOID|space|whole|open|get|close"
+				}
+			]
+		},
+		"separators": {
+			"patterns": [
+				{
+					"name": "punctuation.separator.semicolon.algol68",
+					"match": ";"
+				},
+				{
+					"name": "punctuation.separator.comma.algol68",
+					"match": ","
+				},
+				{
+					"name": "punctuation.separator.colon.algol68",
+					"match": ":"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.compound.algol68",
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.algol68"
+						}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.algol68"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#strings"
+						}
+					]
+				}
+			]
+		}
+	}
+}

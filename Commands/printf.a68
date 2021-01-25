@@ -1,0 +1,4 @@
+BEGIN
+    printf($1l"Hello, World!"$)
+
+END

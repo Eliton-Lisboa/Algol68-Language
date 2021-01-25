@@ -1,0 +1,27 @@
+{
+	".source.algol68": {
+		"editor": {
+			"commentStart": "#",
+			"commentEnd": "#",
+			"foldEndPattern": "^\\s*(\\)|\\]|\\bend\\b)",
+			"increaseIndentPattern": "(\\(|\\[|\\b(BEGIN|DO|ELSE|FOR|IF|THEN|step|until|WHILE)\\b)\\s*$",
+			"decreaseIndentPattern": "^\\s*(\\)|\\]|\\b(ELIF|OD|ELSE|END|FI|THEN|step|until)\\b)"
+		}
+	},
+	"comments": {
+		"blockComment": [
+			"#",
+			"#"
+		]
+	},
+	"folding": {
+		"markers": {
+			"start": "(\\(|\\[|\\bbegin\\b)\\s*$",
+			"end": "^\\s*(\\)|\\]|\\bend\\b)"
+		}
+	},
+	"indentationRules": {
+		"increaseIndentPattern": "(\\(|\\[|\\b(BEGIN|DO|ELSE|FOR|IF|THEN|step|until|WHILE)\\b)\\s*$",
+		"decreaseIndentPattern": "^\\s*(\\)|\\]|\\b(ELIF|OD|ELSE|END|FI|THEN|step|until)\\b)"
+	}
+}

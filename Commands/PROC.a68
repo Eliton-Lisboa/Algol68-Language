@@ -1,0 +1,16 @@
+BEGIN
+    PROC uprint = (STRING text) VOID:
+    BEGIN
+        print ( text )
+    END;
+
+    uprint( "Hello, World!" );
+    print (( newline, newline ));
+
+    PROC sum = (REAL a, REAL b) REAL:
+    BEGIN
+        a + b
+    END;
+
+    print ( sum(2, 5) )
+END
